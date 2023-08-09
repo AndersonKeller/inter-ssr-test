@@ -1,0 +1,89 @@
+.head-line {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: var(--dl-color-black);
+}
+.head-line.sci-h1 {
+  font-size: 50px;
+}
+.head-line.sci-h2 {
+  font-size: 36px;
+}
+.head-line.sci-h3 {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0 0 8px;
+}
+.head-line.sci-h4 {
+  font-size: 18px;
+}
+.head-line.sci-h5 {
+  font-size: 13px;
+}
+.head-line.sci-h6 {
+  font-size: 12px;
+}
+.head-line.color-white {
+  color: var(--dl-color-white);
+}
+.head-line.color-red {
+  color: var(--dl-color-primary);
+}
+.head-line.color-black {
+  color: var(--dl-color-dark);
+}
+.head-line.color-green {
+  color: var(--dl-color-green);
+}
+.head-line.color-golden {
+  color: var(--dl-color-secondary);
+}
+.head-line.cursive {
+  font-family: fontSecundaria !important;
+  font-weight: lighter;
+  text-transform: inherit;
+  text-transform: capitalize;
+}
+.head-line.cursive.sci-h1 {
+  font-size: 120px;
+  line-height: 100px;
+}
+.head-line.cursive.sci-h2 {
+  font-size: 80px;
+  line-height: 80px;
+}
+.head-line.cursive.sci-h3 {
+  font-size: 70px;
+  line-height: 70px;
+}
+.head-line.cursive.sci-h4 {
+  font-size: 60px;
+  line-height: 60px;
+}
+.head-line.cursive.sci-h5 {
+  font-size: 40px;
+  line-height: 40px;
+}
+.head-line.cursive.sci-h6 {
+  font-size: 30px;
+  line-height: 30px;
+}
+@media screen and (max-width: 991px) {
+  .head-line.sci-h2 {
+    font-size: 24px;
+  }
+  .head-line.sci-h3 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .head-line.cursive.sci-h3 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .head-line.cursive.sci-h4 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
