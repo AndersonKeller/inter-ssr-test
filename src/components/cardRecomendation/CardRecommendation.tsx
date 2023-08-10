@@ -9,28 +9,30 @@ export async function CardRecommendation() {
   return (
     <div>
       <div className="hub-recommendation">
-        {sejaSocioBanner.map((banner: any) => {
-          return (
-            <Image
-              alt="seja-socio-banner"
-              src={banner.imagem}
-              width={500}
-              height={500}
-              className="member-recommendation"
-            />
-          );
-        })}
-        {alugueCadeiraBanner.map((banner: any) => {
-          return (
-            <Image
-              className="member-recommendation"
-              alt="seja-socio-banner"
-              src={banner.imagem}
-              width={500}
-              height={500}
-            />
-          );
-        })}
+        {sejaSocioBanner &&
+          sejaSocioBanner.map((banner: any) => {
+            return (
+              <Image
+                alt="seja-socio-banner"
+                src={banner.imagem}
+                width={500}
+                height={500}
+                className="member-recommendation"
+              />
+            );
+          })}
+        {alugueCadeiraBanner &&
+          alugueCadeiraBanner.map((banner: any) => {
+            return (
+              <Image
+                className="member-recommendation"
+                alt="seja-socio-banner"
+                src={banner.imagem}
+                width={500}
+                height={500}
+              />
+            );
+          })}
       </div>
     </div>
   );
