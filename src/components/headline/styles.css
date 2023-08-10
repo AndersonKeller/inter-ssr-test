@@ -1,3 +1,4 @@
+/* @import font from "/assets/fonts/Avalon/AvallonAlt.woff2"; */
 .head-line {
   text-transform: uppercase;
   font-weight: 700;
@@ -41,7 +42,7 @@
   color: var(--dl-color-secondary);
 }
 .head-line.cursive {
-  font-family: fontSecundaria !important;
+  font-family: var(--font-secondary) !important;
   font-weight: lighter;
   text-transform: inherit;
   text-transform: capitalize;

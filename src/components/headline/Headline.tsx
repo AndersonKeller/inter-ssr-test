@@ -8,8 +8,6 @@ interface HeadlineProps {
 }
 export function Headline({ color, font, text, type }: HeadlineProps) {
   return (
-    <h4 className={`head-line sci-' ${type} color- ${color} ${font}`}>
-      {text}
-    </h4>
+    <h4 className={`head-line sci-${type} color-${color} ${font}`}>{text}</h4>
   );
 }

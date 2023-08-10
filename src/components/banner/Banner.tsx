@@ -17,8 +17,8 @@ export function Banner({ images }: BannerProps) {
     <div>
       {images.map((img) => (
         <Image
+          priority
           key={img.idconteudo}
-          loading="lazy"
           className="w-full h-auto block bg-gray-100"
           alt="banner"
           src={img.imagem}

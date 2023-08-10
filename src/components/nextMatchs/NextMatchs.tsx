@@ -1,7 +1,8 @@
 import Gestaosocio from "@/controllers/GestaoSocio.controller";
-import { Headline } from "../headline/Headline";
-import "./styles.css";
 import { Card } from "../card/Card";
+import { Headline } from "../headline/Headline";
+import { MatchInfos } from "./infos/MatchInfos";
+import "./styles.css";
 export interface Match {
   idevento: string;
   idlogin: string;
@@ -34,10 +35,10 @@ export async function NextMatchs() {
   console.log(nextMatchs);
   return (
     <>
-      {nextMatchs.map((item: any) => {
+      {/* {nextMatchs.map((item: any) => {
         return <p>{item.imagem}</p>;
-      })}
-      <div className="next-matchs" v-if="disponivel.length">
+      })} */}
+      <div className="next-matchs">
         <div className="lettering">
           <Headline
             type="h4"
@@ -65,7 +66,14 @@ export async function NextMatchs() {
           {/* <Card v-for="(dados, index) in disponivel" :key="index">
                 <MatchInfos type="resume" :match="dados" />
         </Card>*/}
-            <Card className="fake-card"></Card> 
+          {nextMatchs.map((match) => {
+            return (
+              <Card key={match.idevento}>
+                <MatchInfos match={match} />
+              </Card>
+            );
+          })}
+          <Card className="fake-card"></Card>
         </div>
       </div>
     </>
