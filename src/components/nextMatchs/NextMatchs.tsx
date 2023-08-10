@@ -15,23 +15,25 @@ export interface Match {
   dthr_abertura: string;
   url: string;
   imagem: string;
-  team_home: string;
-  club_crest_home: string;
-  team_away: string;
-  club_crest_away: string;
-  event_description: string;
-  team_home_akronym: string;
-  team_away_akronym: string;
-  fora: string;
-  slug_data: string;
-  slug_campeonato: string;
-  slug_nome: string;
+  escudos: {
+    team_home: string;
+    club_crest_home: string;
+    team_away: string;
+    club_crest_away: string;
+    event_description: string;
+    team_home_akronym: string;
+    team_away_akronym: string;
+    fora: string;
+    slug_data: string;
+    slug_campeonato: string;
+    slug_nome: string;
+  };
 }
 export async function NextMatchs() {
   const gestaoSocio = new Gestaosocio();
   const res = await gestaoSocio.getProximosJogos();
 
-  const nextMatchs: Match[] = res.data.result;
+  const nextMatchs: Match[] = res.data.result.splice(0, 2);
   console.log(nextMatchs);
   return (
     <>
@@ -69,7 +71,7 @@ export async function NextMatchs() {
           {nextMatchs.map((match) => {
             return (
               <Card key={match.idevento}>
-                <MatchInfos match={match} />
+                <MatchInfos type="resume" match={match} />
               </Card>
             );
           })}

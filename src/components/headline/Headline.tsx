@@ -3,7 +3,7 @@ interface HeadlineProps {
   type: string;
   text: string;
   color: string;
-  font: string;
+  font?: string;
   className?: string;
 }
 export function Headline({ color, font, text, type }: HeadlineProps) {
