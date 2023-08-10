@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Match } from "../NextMatchs";
 import "./styles.css";
 interface MatchTeamsProps {
@@ -9,9 +10,21 @@ export function MatchTeams({ match, type }: MatchTeamsProps) {
     <div className="match-teams">
       {type == "resume" && (
         <div className="match-teams-resume">
-          <img className="team" src={match.escudos.club_crest_home} />
+          <Image
+            width={50}
+            height={50}
+            alt="team-creast"
+            className="team"
+            src={match.escudos.club_crest_home}
+          />
           <strong className="versus">VS</strong>
-          <img className="team" src={match.escudos.club_crest_away} />
+          <Image
+            width={50}
+            height={50}
+            alt="team-creast"
+            className="team"
+            src={match.escudos.club_crest_away}
+          />
         </div>
       )}
     </div>

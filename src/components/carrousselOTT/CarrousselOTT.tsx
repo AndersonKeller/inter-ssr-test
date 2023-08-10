@@ -1,4 +1,5 @@
 import { api } from "@/service/api";
+import Image from "next/image";
 import { Headline } from "../headline/Headline";
 import "./styles.css";
 export async function CarrousselOTT() {
@@ -9,17 +10,19 @@ export async function CarrousselOTT() {
   return (
     <div className="sci-ott">
       <Headline type="h3" text="NOSSOS VÍDEOS" color="white" />
-      {/* <div className="icone" v-for="(n, index) in ott" key="index">
-                <a  className="ott-content">
-                    <img src="n.thumbnail_url" class="content-cover" />
-                </a>
-            </div> */}
+
       <div className="ott-container">
         {videos.map((video: any, index: number) => {
           return (
             <div className="icone" key={index}>
               <a className="ott-content">
-                <img src={video.thumbnail_url} className="content-cover" />
+                <Image
+                  width={175}
+                  height={265}
+                  alt="video-ott"
+                  src={video.thumbnail_url}
+                  className="content-cover"
+                />
               </a>
             </div>
           );
