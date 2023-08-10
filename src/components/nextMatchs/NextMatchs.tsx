@@ -34,7 +34,7 @@ export async function NextMatchs() {
   const res = await gestaoSocio.getProximosJogos();
 
   const nextMatchs: Match[] = res.data.result.splice(0, 2);
-  console.log(nextMatchs);
+  // console.log(nextMatchs);
   return (
     <>
       {/* {nextMatchs.map((item: any) => {

@@ -5,7 +5,17 @@ import "./styles.css";
 export async function CarrousselOTT() {
   const res = await api.get("CustomUserApps/OTT/getVideos");
   //   console.log(videos.data);
-  const videos = res.data.result.splice(0, 6);
+  let sortedOtt: any = res.data.result;
+  sortedOtt = sortedOtt.sort((a: any, b: any) => {
+    if (a.created_at > b.created_at) {
+      return -1;
+    }
+    if (a.created_at < b.created_at) {
+      return 1;
+    }
+    return 0;
+  });
+  const videos = sortedOtt.splice(0, 6);
 
   return (
     <div className="sci-ott">

@@ -1,4 +1,5 @@
 import { Banner } from "@/components/banner/Banner";
+import { CardRecommendation } from "@/components/cardRecomendation/CardRecommendation";
 import { CarrousselOTT } from "@/components/carrousselOTT/CarrousselOTT";
 import { NextMatchs } from "@/components/nextMatchs/NextMatchs";
 import { api } from "@/service/api";
@@ -17,8 +18,8 @@ export default async function Home() {
       <NextMatchs />
       <CarrousselOTT />
       {/* <CarrousselOTT />
-        <!-- <Banner :images="bannerComingSoon" /> -->
-        <CardRecommendation /> */}
+        <!-- <Banner :images="bannerComingSoon" /> -->*/}
+      <CardRecommendation />
       {/* {banners.data.result} */}
     </>
   );

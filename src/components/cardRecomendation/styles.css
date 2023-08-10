@@ -1,0 +1,17 @@
+.hub-recommendation {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.hub-recommendation .member-recommendation {
+  width: 50%;
+  height: auto;
+  cursor: pointer;
+}
+@media screen and (max-width: 991px) {
+  .hub-recommendation .member-recommendation {
+    width: 100%;
+  }
+}
