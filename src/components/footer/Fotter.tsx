@@ -1,3 +1,9 @@
+import facebook from "@/assets/icons/sci-facebook.svg";
+import instagram from "@/assets/icons/sci-instagram.svg";
+import tiktok from "@/assets/icons/sci-tiktok.svg";
+import twitter from "@/assets/icons/sci-twitter.svg";
+import youtube from "@/assets/icons/sci-youtube.svg";
+import Image from "next/image";
 import Link from "next/link";
 import "./styles.css";
 export function Footer() {
@@ -16,35 +22,35 @@ export function Footer() {
           target="_blank"
           className="social-link"
         >
-          <img src="@/assets/icons/sci-instagram.svg" />
+          <Image alt="intagram-logo" width={40} height={40} src={instagram} />
         </a>
         <a
           href="https://web.facebook.com/scinternacional"
           target="_blank"
           className="social-link"
         >
-          <img src="@/assets/icons/sci-facebook.svg" />
+          <Image alt="facebook-logo" width={40} height={40} src={facebook} />
         </a>
         <a
           href="https://www.tiktok.com/@scinternacional"
           target="_blank"
           className="social-link"
         >
-          <img src="@/assets/icons/sci-tiktok.svg" />
+          <Image alt="tik-tok-logo" src={tiktok} width={40} height={40} />
         </a>
         <a
           href="https://twitter.com/SCInternacional"
           target="_blank"
           className="social-link"
         >
-          <img src="@/assets/icons/sci-twitter.svg" />
+          <Image alt="twitter-logo" src={twitter} width={40} height={40} />
         </a>
         <a
           href="https://www.youtube.com/@scinternacional"
           target="_blank"
           className="social-link"
         >
-          <img src="@/assets/icons/sci-youtube.svg" />
+          <Image alt="youtube-logo" src={youtube} width={40} height={40} />
         </a>
       </div>
     </div>
