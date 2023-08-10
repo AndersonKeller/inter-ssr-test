@@ -13,6 +13,7 @@ export async function CardRecommendation() {
           sejaSocioBanner.map((banner: any) => {
             return (
               <Image
+                key={banner.idconteudo}
                 alt="seja-socio-banner"
                 src={banner.imagem}
                 width={500}
@@ -25,6 +26,7 @@ export async function CardRecommendation() {
           alugueCadeiraBanner.map((banner: any) => {
             return (
               <Image
+                key={banner.idconteudo}
                 className="member-recommendation"
                 alt="seja-socio-banner"
                 src={banner.imagem}
