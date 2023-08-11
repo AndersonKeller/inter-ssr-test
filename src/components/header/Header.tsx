@@ -1,11 +1,12 @@
 import Image from "next/image";
 import config from "../../../app.config.json";
+import { Menu } from "./menu/Menu";
 import "./styles.css";
 export function Header() {
   const logo = config.globalConfigs.mundoColorado;
   return (
     <header className="sci-header">
-      {/* <Menu /> */}
+      <Menu />
 
       <a className="sci-logo">
         <Image
@@ -13,7 +14,7 @@ export function Header() {
           height={80}
           alt="logo"
           src={logo}
-          className="sci-logo-mobile"
+          className="sci-logo-desktop"
         />
       </a>
 

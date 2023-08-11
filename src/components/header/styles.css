@@ -30,7 +30,7 @@
   padding: 0 40px 0 80px;
 }
 .sci-header .sci-logo {
-  display: none;
+  /* display: none; */
 }
 .sci-header .sci-controls {
   width: fit-content;

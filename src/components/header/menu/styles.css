@@ -1,0 +1,127 @@
+.menu {
+    position: absolute;
+}
+.nav-sidebar {
+    position: fixed;
+    width: 65px;
+    height: 100vh;
+    background-color: var(--dl-color-red-dark);
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    padding: 25px 0;
+    z-index: 100;
+}
+.nav-sidebar:hover {
+    width: 310px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 80%);
+}
+.nav-sidebar .sci-logo {
+    display: flex;
+    align-items: center;
+}
+.nav-sidebar .sci-logo .sci-logo-desktop {
+    margin-left: 20px;
+    width: 80px;
+    height: auto;
+}
+.nav-sidebar .nav-list {
+    padding: 0px;
+    width: 65px;
+    margin: 15px 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.nav-sidebar:hover .nav-list {
+    width: 310px;
+}
+.nav-sidebar .nav-list .nav-link {
+    width: 310px;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    color: var(--dl-color-white);
+    margin: 0;
+    height: 40px;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 700;
+    cursor: pointer;
+}
+.nav-sidebar .nav-list .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+.nav-sidebar .nav-list .nav-link .icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 16px 0 0;
+    padding: 4px;
+    display: flex;
+}
+.nav-sidebar .nav-list .nav-link .icon .icon-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.nav-icon-mobile,
+.nav-close-icon-mobile {
+    display: none;
+}
+.nav-mobile-layer {
+    display: none;
+}
+@media screen and (max-width: 991px) {
+    .menu {
+        position: relative;
+        width: 24%;
+    }
+    .nav-icon-mobile {
+        width: 30px;
+        height: auto;
+    }
+    .nav-icon-mobile,
+    .nav-close-icon-mobile {
+        width: 30px;
+        height: auto;
+        display: flex;
+        margin: auto;
+    }
+    .nav-sidebar {
+        width: 310px;
+        left: -310px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .nav-sidebar.visible {
+        left: 0;
+    }
+    .nav-sidebar .sci-logo {
+        display: none;
+    }
+    .nav-sidebar .nav-list {
+        width: 310px;
+    }
+    .nav-close-icon-mobile {
+        position: fixed;
+        transition: 0.5s;
+        right: -130px;
+    }
+    .nav-close-icon-mobile.visible {
+        right: 30px;
+    }
+    .nav-mobile-layer {
+        background-color: var(--dl-color-red-dark);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 98;
+        opacity: 0.8;
+    }
+    .nav-mobile-layer.visible {
+        display: flex;
+    }
+}
