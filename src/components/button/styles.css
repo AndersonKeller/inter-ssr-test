@@ -1,0 +1,63 @@
+button.cta-button {
+  width: fit-content;
+  min-width: 120px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 8px 8px 0 0;
+  color: var(--dl-color-white);
+  border-radius: 4px;
+  transition: 0.2s;
+  align-self: center;
+  display: block;
+  z-index: auto;
+  cursor: pointer;
+}
+button.cta-button.cta-small {
+  padding: 8px 12px;
+  font-size: 10px;
+}
+button.cta-button.cta-regular {
+  padding: 12px 24px;
+  font-size: 12px;
+}
+button.cta-button.cta-big {
+  padding: 18px 40px;
+  font-size: 12px;
+  margin: 16px 0 0;
+}
+button.cta-button.cta-primary {
+  background-color: var(--dl-color-primary);
+}
+button.cta-button.cta-secondary {
+  background-color: var(--dl-color-secondary);
+}
+button.cta-button.cta-tertiary {
+  background-color: var(--dl-color-red-dark);
+}
+button.cta-button:hover {
+  -webkit-box-shadow: 0px 3px 8px 0px rgb(0 0 0 / 30%);
+  -moz-box-shadow: 0px 3px 8px 0px rgb(0 0 0 / 30%);
+  box-shadow: 0px 3px 8px 0px rgb(0 0 0 / 30%);
+}
+button.cta-button.cta-primary:disabled,
+button.cta-button.cta-secondary:disabled,
+button.cta-button.cta-tertiary:disabled {
+  background-color: var(--dl-color-grey-mid);
+}
+button.cta-button.cta-primary:disabled:hover,
+button.cta-button.cta-secondary:disabled:hover,
+button.cta-button.cta-tertiary:disabled:hover {
+  box-shadow: none;
+}
+@media screen and (max-width: 480px) {
+  button.cta-button.cta-primary {
+    z-index: auto;
+  }
+  button.cta-button.cta-secondary {
+    z-index: auto;
+  }
+  button.cta-button.cta-tertiary {
+    z-index: auto;
+  }
+}

@@ -1,7 +1,9 @@
+import pin from "@/assets/icons/sci-pin.svg";
+import { Button } from "@/components/button/Button";
+import Image from "next/image";
 import { Match } from "../NextMatchs";
 import { MatchTeams } from "../team/MatchTeams";
 import "./styles.css";
-
 interface MatchInfosProps {
   match: Match;
   type?: string;
@@ -22,6 +24,25 @@ export function MatchInfos({ match, type }: MatchInfosProps) {
           <MatchTeams type="resume" match={match} />
         </div>
       )}
+      <div className="match-controls">
+        <div className="match-stadium">
+          <Image
+            alt="pin-icon"
+            src={pin}
+            width={15}
+            height={20}
+            className="icon-pin"
+          />
+          <strong>{match.imagem}</strong>
+        </div>
+        <div className="controls">
+          {/* <FazerChekin
+                    v-if="match.url_redirect && exibe_botao_checkin"
+                    :checkin="match"
+                /> */}
+          <Button label="INGRESSOS" tipo="cta-primary" size="cta-regular" />
+        </div>
+      </div>
     </div>
   );
 }
