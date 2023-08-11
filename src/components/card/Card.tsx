@@ -7,8 +7,6 @@ interface CardProps {
 }
 export function Card({ children, size, flex }: CardProps) {
   return (
-    <div className={`sci-card w- ${size} ${flex ? "flex" : ""}`}>
-      {children}
-    </div>
+    <div className={`sci-card w-${size} ${flex ? "flex" : ""}`}>{children}</div>
   );
 }

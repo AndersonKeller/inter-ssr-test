@@ -16,6 +16,7 @@ export interface Match {
   dthr_abertura: string;
   url: string;
   imagem: string;
+  url_redirect: string;
   escudos: {
     team_home: string;
     club_crest_home: string;
@@ -61,9 +62,6 @@ export async function NextMatchs() {
         </div>
 
         <div className="matchs">
-          {/* <Card v-for="(dados, index) in disponivel" :key="index">
-                <MatchInfos type="resume" :match="dados" />
-        </Card>*/}
           {nextMatchs.map((match) => {
             return (
               <Card key={match.idevento}>

@@ -2,6 +2,7 @@ import pin from "@/assets/icons/sci-pin.svg";
 import { Button } from "@/components/button/Button";
 import Image from "next/image";
 import { Match } from "../NextMatchs";
+import { FazerCheckin } from "../checkin/FazerCheckin";
 import { MatchTeams } from "../team/MatchTeams";
 import "./styles.css";
 interface MatchInfosProps {
@@ -36,10 +37,7 @@ export function MatchInfos({ match, type }: MatchInfosProps) {
           <strong>{match.imagem}</strong>
         </div>
         <div className="controls">
-          {/* <FazerChekin
-                    v-if="match.url_redirect && exibe_botao_checkin"
-                    :checkin="match"
-                /> */}
+          {match.url_redirect && <FazerCheckin checkin={match} />}
           <Button label="INGRESSOS" tipo="cta-primary" size="cta-regular" />
         </div>
       </div>

@@ -4,6 +4,6 @@
 
 @layer components {
   .sciWrapper {
-    @apply w-full h-auto relative m-auto bg-white;
+    @apply w-full h-auto relative m-auto bg-white pl-[60px];
   }
 }

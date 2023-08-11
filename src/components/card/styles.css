@@ -1,6 +1,7 @@
 .sci-card {
   background-color: #ffffff;
   width: 100%;
+  min-width: 300px;
   height: auto;
   padding: 24px;
   border-radius: 10px;
