@@ -1,4 +1,5 @@
 import Gestaosocio from "@/controllers/GestaoSocio.controller";
+import { Button } from "../button/Button";
 import { Card } from "../card/Card";
 import { Headline } from "../headline/Headline";
 import { MatchInfos } from "./infos/MatchInfos";
@@ -56,12 +57,7 @@ export async function NextMatchs() {
             font="cursive"
             color="white"
           />
-          {/* <Button
-                :label="$t_('card_ver')"
-                type="cta-primary"
-                size="cta-regular"
-                @click="$util.go('Jogos')"
-            /> */}
+          <Button label="VER TUDO" tipo="cta-primary" size="cta-regular" />
         </div>
 
         <div className="matchs">

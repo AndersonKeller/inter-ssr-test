@@ -1,0 +1,65 @@
+.sci-header {
+  width: calc(100% - 64px);
+  height: 110px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 6px solid var(--app-corprimaria);
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  margin: 0 0 0 64px;
+  padding: 0 40px 0 80px;
+}
+.sci-header .sci-logo {
+  display: none;
+}
+.sci-header .sci-controls {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .sci-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  .sci-header .sci-logo {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+  }
+  .sci-header .sci-logo .sci-logo-mobile {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sci-header {
+    position: fixed;
+    z-index: 1;
+  }
+}
