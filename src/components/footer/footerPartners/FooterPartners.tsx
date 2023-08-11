@@ -1,5 +1,6 @@
 import { Headline } from "@/components/headline/Headline";
 import { api } from "@/service/api";
+import Image from "next/image";
 import "./styles.css";
 interface Patrocinadores {
   logo: string;
@@ -20,20 +21,30 @@ export async function FooterPartners() {
     <div className="sci-footer-logos">
       <Headline color="black" type="h6" text="Patrocinadores" />
       <div className="footer-sponsors">
-        {logos.link_patrocinadores.map((item) => {
+        {logos.link_patrocinadores.map((item, index) => {
           return (
-            <a className="sponsors-logo" href={item.link} target="_blank">
-              <img src={item.logo} />
+            <a
+              className="sponsors-logo"
+              href={item.link}
+              target="_blank"
+              key={index}
+            >
+              <Image alt="logo-sponsor" src={item.logo} />
             </a>
           );
         })}
       </div>
       <Headline color="black" type="h6" text="Parceiros" />
       <div className="footer-partners">
-        {logos.link_parceiros.map((item) => {
+        {logos.link_parceiros.map((item, index) => {
           return (
-            <a className="partners-logo" href={item.link} target="_blank">
-              <img src={item.logo} />
+            <a
+              className="partners-logo"
+              href={item.link}
+              target="_blank"
+              key={index}
+            >
+              <Image alt="logo-sponsor" src={item.logo} />
             </a>
           );
         })}

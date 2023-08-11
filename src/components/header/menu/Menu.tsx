@@ -59,11 +59,11 @@ export function Menu() {
           />
         </a>
         <div className="nav-list">
-          {items.map((item) => {
+          {items.map((item, index) => {
             return (
               <a
                 className="nav-link"
-
+                key={index}
                 // @click="toGo(item)"
                 // :key="key"
               >
