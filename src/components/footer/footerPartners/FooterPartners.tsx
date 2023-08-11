@@ -29,7 +29,12 @@ export async function FooterPartners() {
               target="_blank"
               key={index}
             >
-              <Image alt="logo-sponsor" src={item.logo} />
+              <Image
+                width={200}
+                height={200}
+                alt="logo-sponsor"
+                src={item.logo}
+              />
             </a>
           );
         })}
@@ -44,7 +49,12 @@ export async function FooterPartners() {
               target="_blank"
               key={index}
             >
-              <Image alt="logo-sponsor" src={item.logo} />
+              <Image
+                width={200}
+                height={200}
+                alt="logo-sponsor"
+                src={item.logo}
+              />
             </a>
           );
         })}
