@@ -6,6 +6,7 @@
   align-items: stretch;
   justify-content: space-between;
   flex-wrap: no-wrap;
+  margin-left: -60px;
 }
 .sci-main .sci-login-image {
   /* background: url('../assets/images/Banner-onboarding.jpg') center center no-repeat; */
