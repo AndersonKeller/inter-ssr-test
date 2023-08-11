@@ -38,14 +38,14 @@
   --dl-color-green: #76962e;
   --dl-color-green-light: #ebf3da;
 
-  --font-secondary: url("/assets/fonts/Avalon/AvallonAlt.woff2");
+  --font-secondary: var(fontSecundaria);
 }
 * {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   font-size: 12px;
-  font-family: "Montserrat", "sans-serif" !important;
+  font-family: "Montserrat", "sans-serif";
   line-height: 1.6em;
 }
 body {

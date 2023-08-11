@@ -1,9 +1,8 @@
 import { Wrapper } from "@/components/Wrapper";
 import { Footer } from "@/components/footer/Fotter";
+import { montSerrat } from "@/styles/fonts";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Mundo Colorado | Homologação",
@@ -19,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={montSerrat.className}>
         <Wrapper>{children}</Wrapper>
         <Footer />
       </body>
