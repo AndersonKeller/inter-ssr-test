@@ -22,10 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={montSerrat.className}>
         <Wrapper>
-          <Header />
+         
           {children}
-          <FooterPartners />
-          <Footer />
         </Wrapper>
       </body>
     </html>

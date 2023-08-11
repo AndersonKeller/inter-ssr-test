@@ -1,0 +1,66 @@
+.sci-main {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: no-wrap;
+}
+.sci-main .sci-login-image {
+  /* background: url('../assets/images/Banner-onboarding.jpg') center center no-repeat; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: center;
+  background-position: center;
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  padding-top: 58vh;
+}
+.sci-main .sci-login-image .sci-button-app {
+  display: flex;
+  width: 50vh;
+  justify-content: space-between;
+}
+.sci-main .sci-login-image .sci-button-app .sci-button-link-1 {
+  width: 51%;
+  height: 18%;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.sci-main .sci-login-image .sci-button-app .sci-button-link-2 {
+  width: 47%;
+  height: 18%;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.sci-main .sci-login-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  flex-direction: column;
+}
+.sci-main .sci-login-container .sci-logo {
+  width: 160px;
+}
+
+@media screen and (min-width: 1600px) {
+  .sci-main .sci-login-container .sci-logo {
+    width: 330px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .sci-main .sci-login-container {
+    width: 100%;
+  }
+  .sci-main .sci-login-container .sci-logo {
+    width: 150px;
+  }
+  .sci-main .sci-login-image {
+    display: none;
+  }
+}
