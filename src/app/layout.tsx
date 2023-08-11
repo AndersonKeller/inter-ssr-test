@@ -1,5 +1,6 @@
 import { Wrapper } from "@/components/Wrapper";
 import { Footer } from "@/components/footer/Fotter";
+import { FooterPartners } from "@/components/footer/footerPartners/FooterPartners";
 import { montSerrat } from "@/styles/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={montSerrat.className}>
         <Wrapper>{children}</Wrapper>
+        <FooterPartners />
         <Footer />
       </body>
     </html>
