@@ -1,0 +1,76 @@
+.testCard {
+  min-width: 36px;
+  top: 40px;
+  left: 1710px;
+  transform-origin: left top;
+  z-index: 8;
+}
+.sci-avatar {
+  z-index: 10 !important;
+  width: fit-content;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 24px 0px;
+}
+.avatar-photo {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 0px 0 0;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+.sci-avatar .avatar-name {
+  width: fit-content;
+  color: var(--dl-color-white);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+@media screen and (max-width: 991px) {
+  .sci-avatar {
+    padding: 0;
+  }
+  .sci-avatar {
+    top: 8px;
+    right: 10px;
+  }
+  .sci-avatar .avatar-photo {
+    width: 45px;
+    height: 45px;
+    margin: 0;
+  }
+  .sci-avatar .avatar-name {
+    display: none;
+  }
+  .sci-avatar {
+    padding: 24px 40px 24px 20px;
+  }
+  .avatar-photo {
+    margin: 0px;
+  }
+}
+@media screen and (max-width: 600px) {
+  S .sci-avatar {
+    padding: 30px 45px 24px 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sci-avatar {
+    cursor: pointer;
+    top: 0px !important;
+  }
+  .sci-avatar .avatar-name {
+    cursor: pointer;
+  }
+  .nome_perfil {
+    margin-top: 200px;
+    text-shadow: black 0.1em 0.1em 0.1em;
+  }
+}

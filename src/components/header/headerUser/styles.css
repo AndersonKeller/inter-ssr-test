@@ -1,0 +1,13 @@
+.sci-header-user {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var(--dl-color-white);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.sci-header-user .sci-name-user {
+  font-size: 11px;
+}
