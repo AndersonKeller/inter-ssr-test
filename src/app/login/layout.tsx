@@ -2,7 +2,7 @@ import mundoColorado from "@/assets/images/sci-mundo-colorado.png";
 import { api } from "@/service/api";
 import type { Metadata } from "next";
 import Image from "next/image";
-import "../globals.css";
+// import "../globals.css";
 import "./layout.css";
 export const metadata: Metadata = {
   title: "Mundo Colorado | Login",

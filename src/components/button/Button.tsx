@@ -1,3 +1,4 @@
+import "../../app/globals.css";
 import "./styles.css";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;

@@ -1,0 +1,21 @@
+label.label {
+  font-size: 9px;
+  font-weight: bold;
+  margin: 16px 0 4px 0;
+  display: block;
+  text-transform: uppercase;
+  text-align: left;
+}
+label[required]:after {
+  content: "*";
+  margin-right: 10px;
+  color: red;
+  position: relative;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 991px) {
+  label.label {
+    font-size: 8px;
+  }
+}
