@@ -1,15 +1,16 @@
 a.sci-link {
-    width: fit-content;
-    height: auto;
-    font-size: inherit;
-    color: var(--dl-color-black);
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-weight: 700;
-  }
-  a.sci-link.color-red {
-      color: var(--dl-color-primary);
-  }
-  a.sci-link.color-white {
-      color: var(--dl-color-white);
-  }
+  width: fit-content;
+  height: auto;
+  font-size: inherit;
+  color: var(--dl-color-black);
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 700;
+  cursor: pointer;
+}
+a.sci-link.color-red {
+  color: var(--dl-color-primary);
+}
+a.sci-link.color-white {
+  color: var(--dl-color-white);
+}
