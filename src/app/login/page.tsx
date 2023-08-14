@@ -5,20 +5,20 @@ import { Headline } from "@/components/headline/Headline";
 import { Label } from "@/components/label/Label";
 import { LinkComponent } from "@/components/link/Link";
 import { ModalProblems } from "@/components/modalProblems/ModalProblems";
+import { api } from "@/service/api";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import "../globals.css";
 import "./styles.css";
 const loginSchema = z.object({
-  name: z.string(),
-  password: z.string(),
+  _username: z.string(),
+  _password: z.string(),
 });
 type LoginData = z.infer<typeof loginSchema>;
 
 export default function Login() {
-  const [loginData, setLoginData] = useState("");
+  // const [loginData, setLoginData] = useState("");
   const {
     register,
     handleSubmit,
@@ -26,8 +26,22 @@ export default function Login() {
   } = useForm<LoginData>({
     resolver: zodResolver(loginSchema),
   });
-  function login(data: LoginData) {
+  async function getLogins(data: LoginData) {
     console.log(data);
+    const termos = await api.post("CustomUserApps/aceiteTermo", {
+      username: data._username,
+    });
+    console.log(termos.data);
+    const logins = await api.get(`logins`);
+    console.log(logins.data.result);
+    async function login() {
+      const res = await api.post(
+        "login/" + logins.data.result.logins[0].id,
+        data
+      );
+      console.log(res.data);
+    }
+    login();
   }
   return (
     <>
@@ -36,18 +50,18 @@ export default function Login() {
           <Headline type="h3" text="ENTRAR" color="red" font="cursive" />
           Escolha uma das opções abaixo para acessar
         </Column>
-        <form onSubmit={handleSubmit(login)}>
+        <form onSubmit={handleSubmit(getLogins)}>
           <Column>
             <Label label="CPF, MATRÍCULA, PASSAPORTE ou DNI" />
             <input
-              {...register("name")}
+              {...register("_username")}
               type="text"
               placeholder="Somente Números e Letras"
             ></input>
           </Column>
           <Column>
             <Label label="SENHA" />
-            <input {...register("password")} type="password"></input>
+            <input {...register("_password")} type="password"></input>
           </Column>
           <Button
             type="submit"

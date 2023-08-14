@@ -18,7 +18,7 @@ const endpoints = {
 
 export const api = axios.create({
   baseURL: endpoints.homologacao,
-  timeout: 5000,
+  timeout: 15000,
 });
 // GETCONTEUDOS              : 'cms/conteudos/',
 //             GETCONTEUDO               : 'cms/conteudo/',
