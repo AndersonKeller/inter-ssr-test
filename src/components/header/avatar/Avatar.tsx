@@ -1,3 +1,4 @@
+"use client";
 import avatarImg from "@/assets/avatar.jpg";
 import Image from "next/image";
 import "./styles.css";

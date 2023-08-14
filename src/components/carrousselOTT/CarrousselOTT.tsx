@@ -2,6 +2,7 @@ import { api } from "@/service/api";
 import Image from "next/image";
 import { Headline } from "../headline/Headline";
 import "./styles.css";
+export const revalidate = 60 * 60 * 24;
 export async function CarrousselOTT() {
   const res = await api.get("CustomUserApps/OTT/getVideos");
   //   console.log(videos.data);
