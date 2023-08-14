@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer/Fotter";
 import { FooterPartners } from "@/components/footer/footerPartners/FooterPartners";
 import { Header } from "@/components/header/Header";
 import { NextMatchs } from "@/components/nextMatchs/NextMatchs";
+import { Providers } from "@/providers/Providers";
 import { api } from "@/service/api";
 
 export default async function Home() {
@@ -16,7 +17,7 @@ export default async function Home() {
     }
   });
   return (
-    <>
+    <Providers>
       <Header />
       {allBanners && <Banner images={allBanners} />}
       <NextMatchs />
@@ -27,6 +28,6 @@ export default async function Home() {
       {/* {banners.data.result} */}
       <FooterPartners />
       <Footer />
-    </>
+    </Providers>
   );
 }
