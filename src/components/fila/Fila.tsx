@@ -12,15 +12,15 @@ export function Fila() {
     const res = await api.post("CustomUserApps/Configs", { idpessoa_tipo: "" });
     console.log(res.data);
   }
-  let time = setInterval(() => {
-    if (segundos > 0) {
-      setSegundos(segundos - 1);
-    }
-    if (segundos == 0) {
-      clearInterval(time);
-      window.location.reload();
-    }
-  }, 1000);
+  // let time = setInterval(() => {
+  //   if (segundos > 0) {
+  //     setSegundos(segundos - 1);
+  //   }
+  //   if (segundos == 0) {
+  //     clearInterval(time);
+  //     window.location.reload();
+  //   }
+  // }, 1000);
   // useEffect(() => {
   //   res();
   // }, []);
