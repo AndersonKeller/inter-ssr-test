@@ -4,7 +4,13 @@ import "./styles.css";
 export function MiniCart() {
   return (
     <div>
-      <Image alt="cart" src={cart} className="cart-icon sci-cart active" />
+      <Image
+        alt="cart"
+        src={cart}
+        width={50}
+        height={50}
+        className="cart-icon sci-cart active"
+      />
       <div className="cart-quantity">{/* {{ $carrinho.resumo.qtd }} */}</div>
     </div>
   );

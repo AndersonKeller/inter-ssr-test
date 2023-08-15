@@ -1,5 +1,4 @@
 import { api } from "@/service/api";
-import Image from "next/image";
 import { Recommendations } from "./Recommendations";
 import "./styles.css";
 export async function CardRecommendation() {
@@ -7,38 +6,17 @@ export async function CardRecommendation() {
   const sejaSocioBanner = resSejaSocio.data.result;
   const resAlugueCadeira = await api.get("cms/conteudos/Banner_alugue_cadeira");
   const alugueCadeiraBanner = resAlugueCadeira.data.result;
-
+  const tenhaBeneficios = await api.get(
+    "cms/conteudos/Banner_tenha_beneficios"
+  );
+  const tenhaBeneficiosBanner = tenhaBeneficios.data.result;
+  const manualSocio = await api.get("cms/conteudos/banner_manual_nsocio");
+  const manualSocioBanner = manualSocio.data.result;
+  const banners = [manualSocioBanner, alugueCadeiraBanner];
+  const bannersSocio = [tenhaBeneficiosBanner, sejaSocioBanner];
   return (
     <div>
-      <div className="hub-recommendation">
-        {sejaSocioBanner &&
-          sejaSocioBanner.map((banner: any) => {
-            return (
-              <Image
-                key={banner.idconteudo}
-                alt="seja-socio-banner"
-                src={banner.imagem}
-                width={500}
-                height={500}
-                className="member-recommendation"
-              />
-            );
-          })}
-        {alugueCadeiraBanner &&
-          alugueCadeiraBanner.map((banner: any) => {
-            return (
-              <Image
-                key={banner.idconteudo}
-                className="member-recommendation"
-                alt="seja-socio-banner"
-                src={banner.imagem}
-                width={500}
-                height={500}
-              />
-            );
-          })}
-      </div>
-      <Recommendations banners={alugueCadeiraBanner} />
+      <Recommendations bannersSocio={bannersSocio} banners={banners} />
     </div>
   );
 }

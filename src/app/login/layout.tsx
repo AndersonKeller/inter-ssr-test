@@ -29,7 +29,13 @@ export default async function LoginLayout({
       ></div>
 
       <div className="sci-login-container">
-        <Image src={mundoColorado} alt="mundo colorado" className="sci-logo" />
+        <Image
+          src={mundoColorado}
+          width={150}
+          height={100}
+          alt="mundo colorado"
+          className="sci-logo"
+        />
         {children}
       </div>
     </div>

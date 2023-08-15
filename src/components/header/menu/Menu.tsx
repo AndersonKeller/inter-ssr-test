@@ -45,6 +45,8 @@ export function Menu() {
           alt="close"
           src={close}
           className="nav-close-icon-mobile"
+          width={40}
+          height={40}
           // @click="toggle_nav()"
           //   v-bind:class="{ visible: NavVisible }"
         />

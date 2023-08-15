@@ -2,42 +2,41 @@
 
 import { useAuth } from "@/providers/user/UserProvider";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 interface RecommendationsProps {
   banners: any;
+  bannersSocio: any;
 }
-export function Recommendations({ banners }: RecommendationsProps) {
+export function Recommendations({
+  bannersSocio,
+  banners,
+}: RecommendationsProps) {
   const { user } = useAuth();
-  console.log(user.idpessoa_tipo == "100001");
-  console.log(banners);
+  const [recommendations, setRecommendations] = useState([]);
+
+  useEffect(() => {
+    if (user.idpessoa_tipo == "100001") {
+      setRecommendations(banners);
+    } else {
+      setRecommendations(bannersSocio);
+    }
+  }, []);
   return (
     <div>
       <div className="hub-recommendation">
-        {banners &&
-          banners.map((banner: any) => {
+        {recommendations &&
+          recommendations.map((banner: any) => {
             return (
               <Image
-                key={banner.idconteudo}
+                key={banner[0].idconteudo}
                 alt="seja-socio-banner"
-                src={banner.imagem}
+                src={banner[0].imagem}
                 width={500}
                 height={500}
                 className="member-recommendation"
               />
             );
           })}
-        {/* {alugueCadeiraBanner &&
-          alugueCadeiraBanner.map((banner: any) => {
-            return (
-              <Image
-                key={banner.idconteudo}
-                className="member-recommendation"
-                alt="seja-socio-banner"
-                src={banner.imagem}
-                width={500}
-                height={500}
-              />
-            );
-          })} */}
       </div>
     </div>
   );

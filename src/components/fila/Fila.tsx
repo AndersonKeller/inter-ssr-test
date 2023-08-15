@@ -1,4 +1,5 @@
 import torcida from "@/assets/images/Torcida-Inter-apoio.jpg";
+import Image from "next/image";
 import config from "../../../app.config.json";
 import "./styles.css";
 
@@ -9,10 +10,11 @@ export function Fila() {
       style={{ backgroundImage: "url(" + torcida.src + ")" }}
     >
       <div className="text-center ma-3">
-        <img
+        <Image
           alt="logo"
           src={config.globalConfigs.mundoColorado}
-          width="120"
+          width={120}
+          height={70}
           loading="lazy"
           className="mx-auto mb-5"
         />
@@ -41,7 +43,7 @@ export function Fila() {
 
           <small style={{ color: "#7f7f7f;" }}>
             We are getting a lot of hits.To maintain the quality of our service,
-            you are in the queue. As soon as possible, you'll be redirected
+            you are in the queue. As soon as possible, you ll be redirected
             automatically. Wait a little.
           </small>
         </div>

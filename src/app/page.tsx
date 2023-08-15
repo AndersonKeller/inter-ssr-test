@@ -11,7 +11,7 @@ import { api } from "@/service/api";
 
 export default async function Home() {
   const banners = await api.get("cms/conteudos/banners_intenacional");
-  console.log(banners.data);
+
   const allBanners =
     banners.data.result &&
     banners.data.result.filter((banner: any) => {

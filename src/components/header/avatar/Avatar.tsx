@@ -13,6 +13,8 @@ export function Avatar() {
                 className="avatar-photo"
                 alt="avatar-photo"
                 src={avatarImg}
+                width={50}
+                height={50}
               />
               {/* <v-list>  
           <v-list-item
