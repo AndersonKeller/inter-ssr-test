@@ -9,6 +9,7 @@ import {
   useState,
 } from "react";
 
+import { api } from "@/service/api";
 import { UserData } from "./interfaces";
 interface UserProps {
   children: ReactNode;
@@ -29,6 +30,9 @@ export function UserProvider({ children }: UserProps) {
     const cookies = parseCookies();
     if (cookies["@user-session-mundoColorado"]) {
       setUser(JSON.parse(cookies["@user-session-mundoColorado"]));
+      api.defaults.headers.common.Authorization = `Bearer ${
+        JSON.parse(cookies["@user-session-mundoColorado"]).access_token
+      }`;
     }
   }
   useEffect(() => {

@@ -1,9 +1,29 @@
+"use client";
 import torcida from "@/assets/images/Torcida-Inter-apoio.jpg";
+import { api } from "@/service/api";
 import Image from "next/image";
+import { useState } from "react";
 import config from "../../../app.config.json";
 import "./styles.css";
 
 export function Fila() {
+  const [segundos, setSegundos] = useState(25);
+  async function res() {
+    const res = await api.post("CustomUserApps/Configs", { idpessoa_tipo: "" });
+    console.log(res.data);
+  }
+  let time = setInterval(() => {
+    if (segundos > 0) {
+      setSegundos(segundos - 1);
+    }
+    if (segundos == 0) {
+      clearInterval(time);
+      window.location.reload();
+    }
+  }, 1000);
+  // useEffect(() => {
+  //   res();
+  // }, []);
   return (
     <main
       className="app-fila"
@@ -23,7 +43,7 @@ export function Fila() {
         <small style={{ color: "#7f7f7f" }}>Please wait</small>
 
         <div style={{ maxWidth: "300px !important;" }}>
-          <label>Sua posição é: (s)</label>
+          <label>Sua posição é: {segundos} (s)</label>
 
           <h1
             style={{

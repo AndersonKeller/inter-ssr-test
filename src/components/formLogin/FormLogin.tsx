@@ -43,7 +43,10 @@ export function FormLogin() {
         setCookie(
           null,
           "@user-session-mundoColorado",
-          JSON.stringify(res.data.result.user),
+          JSON.stringify({
+            ...res.data.result.user,
+            access_token: res.data.result.access_token,
+          }),
           {
             maxAge: 30 * 24 * 60 * 60,
             path: "/",

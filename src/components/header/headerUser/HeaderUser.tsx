@@ -14,7 +14,7 @@ export function HeaderUser() {
     const cookies = parseCookies();
     if (cookies["@user-session-mundoColorado"]) {
       const userSession = JSON.parse(cookies["@user-session-mundoColorado"]);
-      // console.log(userSession);
+      console.log(userSession);
       if (!userSession.nome) {
         router.push("/login");
       }

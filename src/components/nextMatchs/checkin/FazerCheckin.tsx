@@ -1,4 +1,6 @@
 import { Button } from "@/components/button/Button";
+import GestaoSocio from "@/controllers/GestaoSocio.controller";
+import { api } from "@/service/api";
 import { Match } from "../NextMatchs";
 import "./styles.css";
 
@@ -6,7 +8,12 @@ interface FazerCheckinProps {
   checkin: Match;
   abreModal?: boolean;
 }
-export function FazerCheckin({ checkin, abreModal }: FazerCheckinProps) {
+export async function FazerCheckin({ checkin, abreModal }: FazerCheckinProps) {
+  const gestaoSocio = new GestaoSocio();
+  const res = await api.post("CustomUserApps/Configs", { idpessoa_tipo: "" });
+  const contratos = await gestaoSocio.gsContratos();
+  console.log(res.data);
+  console.log(contratos.data);
   return (
     <div className="checkin">
       {" "}
