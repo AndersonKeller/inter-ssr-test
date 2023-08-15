@@ -8,15 +8,17 @@ import { MiniCart } from "../miniCart/MiniCart";
 import "./styles.css";
 export function HeaderUser() {
   const router = useRouter();
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
 
   useEffect(() => {
     const cookies = parseCookies();
     if (cookies["@user-session-mundoColorado"]) {
       const userSession = JSON.parse(cookies["@user-session-mundoColorado"]);
+      // console.log(userSession);
       if (!userSession.nome) {
         router.push("/login");
       }
+      setUser(userSession);
     } else {
       router.push("/login");
     }

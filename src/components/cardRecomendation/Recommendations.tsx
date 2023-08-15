@@ -1,18 +1,19 @@
-import { api } from "@/service/api";
-import Image from "next/image";
-import { Recommendations } from "./Recommendations";
-import "./styles.css";
-export async function CardRecommendation() {
-  const resSejaSocio = await api.get("cms/conteudos/Banner_seja_socio");
-  const sejaSocioBanner = resSejaSocio.data.result;
-  const resAlugueCadeira = await api.get("cms/conteudos/Banner_alugue_cadeira");
-  const alugueCadeiraBanner = resAlugueCadeira.data.result;
+"use client";
 
+import { useAuth } from "@/providers/user/UserProvider";
+import Image from "next/image";
+interface RecommendationsProps {
+  banners: any;
+}
+export function Recommendations({ banners }: RecommendationsProps) {
+  const { user } = useAuth();
+  console.log(user.idpessoa_tipo == "100001");
+  console.log(banners);
   return (
     <div>
       <div className="hub-recommendation">
-        {sejaSocioBanner &&
-          sejaSocioBanner.map((banner: any) => {
+        {banners &&
+          banners.map((banner: any) => {
             return (
               <Image
                 key={banner.idconteudo}
@@ -24,7 +25,7 @@ export async function CardRecommendation() {
               />
             );
           })}
-        {alugueCadeiraBanner &&
+        {/* {alugueCadeiraBanner &&
           alugueCadeiraBanner.map((banner: any) => {
             return (
               <Image
@@ -36,9 +37,8 @@ export async function CardRecommendation() {
                 height={500}
               />
             );
-          })}
+          })} */}
       </div>
-      <Recommendations banners={alugueCadeiraBanner} />
     </div>
   );
 }
