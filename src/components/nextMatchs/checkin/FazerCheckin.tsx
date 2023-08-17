@@ -1,8 +1,9 @@
 "use client";
 import { Button } from "@/components/button/Button";
 import { api } from "@/service/api";
+import { useConfigStore } from "@/store/modules/configs/configStore";
 import { useUserStore } from "@/store/modules/user/userStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Match } from "../NextMatchs";
 import "./styles.css";
 
@@ -12,6 +13,9 @@ interface FazerCheckinProps {
 }
 export function FazerCheckin({ checkin, abreModal }: FazerCheckinProps) {
   const { token, user } = useUserStore();
+  const { configs } = useConfigStore();
+  const [planoCheckin, setPlanoCheckin] = useState(false);
+  const [userContratos, setUserContratos] = useState([]);
   async function getContratos() {
     const body = { method: "gsContratos" };
 
@@ -22,22 +26,39 @@ export function FazerCheckin({ checkin, abreModal }: FazerCheckinProps) {
         headers: { Authorization: `Bearer ${token}` },
       }
     );
-    console.log(res.data);
+    if (res.data.result) {
+      const contratos = res.data.result.map((plano: any) => plano.idplano);
+      setUserContratos(contratos);
+    }
   }
-
+  function validateCheckin() {
+    const isCheckin = configs.idplanos_checkin.some(
+      (plano: string, index: number) => {
+        return userContratos[index] == plano;
+      }
+    );
+    setPlanoCheckin(isCheckin);
+  }
   useEffect(() => {
     getContratos();
   }, [token]);
+  useEffect(() => {
+    if (configs) {
+      validateCheckin();
+    }
+  }, [configs]);
   return (
     <div className="checkin">
       {" "}
-      <div>
-        <Button
-          label="FAZER CHECK-IN"
-          tipo="cta-secondary"
-          size="cta-regular"
-        />
-      </div>
+      {planoCheckin && (
+        <div>
+          <Button
+            label="FAZER CHECK-IN"
+            tipo="cta-secondary"
+            size="cta-regular"
+          />
+        </div>
+      )}
     </div>
   );
 }

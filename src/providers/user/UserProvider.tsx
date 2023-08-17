@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { api } from "@/service/api";
+import { useConfigStore } from "@/store/modules/configs/configStore";
 import { useUserStore } from "@/store/modules/user/userStore";
 import { UserData } from "./interfaces";
 interface UserProps {
@@ -21,16 +22,15 @@ interface UserValues {
   setUser: Dispatch<SetStateAction<UserData>>;
   accessToken: string;
   setAccessToken: Dispatch<SetStateAction<string>>;
-  configs: any;
-  setConfigs: Dispatch<SetStateAction<any>>;
 }
 export const userContext = createContext({} as UserValues);
 
 export function UserProvider({ children }: UserProps) {
   const [user, setUser] = useState<UserData>({} as UserData);
   const [accessToken, setAccessToken] = useState("");
-  const [configs, setConfigs] = useState("");
+
   const userStore = useUserStore();
+  const { setConfigs } = useConfigStore();
   async function verifyLogged() {
     const cookies = parseCookies();
     if (cookies["@user-session-mundoColorado"]) {
@@ -56,8 +56,6 @@ export function UserProvider({ children }: UserProps) {
   return (
     <userContext.Provider
       value={{
-        configs,
-        setConfigs,
         accessToken,
         setAccessToken,
         setUser,
