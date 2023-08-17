@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { api } from "@/service/api";
+import { useUserStore } from "@/store/modules/user/userStore";
 import { UserData } from "./interfaces";
 interface UserProps {
   children: ReactNode;
@@ -29,19 +30,23 @@ export function UserProvider({ children }: UserProps) {
   const [user, setUser] = useState<UserData>({} as UserData);
   const [accessToken, setAccessToken] = useState("");
   const [configs, setConfigs] = useState("");
+  const userStore = useUserStore();
   async function verifyLogged() {
     const cookies = parseCookies();
     if (cookies["@user-session-mundoColorado"]) {
       setUser(JSON.parse(cookies["@user-session-mundoColorado"]));
       const token = cookies["@token-session-mundoColorado"];
-      console.log(token);
-      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+      userStore.setUser({
+        ...JSON.parse(cookies["@user-session-mundoColorado"]),
+        access_token: JSON.parse(token),
+      });
+      userStore.setToken(JSON.parse(token));
     }
   }
 
   async function getConfigs() {
     const res = await api.post("CustomUserApps/Configs", { idpessoa_tipo: "" });
-    console.log();
+    console.log(res.data);
     setConfigs(res.data.result);
   }
   useEffect(() => {
